@@ -1,9 +1,7 @@
-const express = require('express');
-const routes = require('./routes');
+import express from 'express';
+import routes from './routes';
 
 class App {
-
-  //executado automaticamente toda vez que a class APP é chamada
   constructor() {
     this.server = express();
 
@@ -18,7 +16,6 @@ class App {
   routes() {
     this.server.use(routes);
   }
-
 }
 
-module.exports = new App().server;
+export default new App().server;

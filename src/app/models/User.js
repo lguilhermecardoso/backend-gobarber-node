@@ -23,6 +23,11 @@ class User extends Model {
     });
     return this;
   }
+
+  // Metodos auxiliares que não sao RN
+  checkPassword(password) {
+    return bcrypt.compare(password, this.password_hash);
+  }
 }
 
 export default User;
